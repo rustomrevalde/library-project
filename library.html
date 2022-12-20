@@ -97,7 +97,7 @@
 
         function renderSubjectButtons() {
             let subjectButtons = '';
-            mainLibrary.subjects.forEach((subject) => {
+            mainLibrary.getSubjects().forEach((subject) => {
                 subjectButtons = subjectButtons + `<button onclick='showBooks(${subject.id})'>${subject.name}</button>`;
             });
 
@@ -107,7 +107,7 @@
         function showBooks(subject_id) {
             console.log(subject_id);
             let books = '';
-            mainLibrary.books.forEach((book) => {
+            mainLibrary.getBooks().forEach((book) => {
                 if (subject_id === book.subject_id) {
                     books = books + `<li>${book.name} - ${book.author} - ${book.status}</li>`;
                 } 
@@ -118,19 +118,18 @@
         function searchBook() {
             let kindsOfBooks = '';
             let bookName = document.getElementById('bookToSearch').value;
-            let books = mainLibrary.books.filter(book => book.name === bookName);
+            let books = mainLibrary.getBooks().filter(book => book.name === bookName);
 
             books.forEach((book) => {
                 kindsOfBooks = kindsOfBooks + `<li>${book.name} - ${book.author} - ${book.status}</li>`
             })
 
             document.querySelector('#books').innerHTML = kindsOfBooks;
-            console.log(books);
         }
 
         function renderDropDownSubjects() {
             let dropDownSubjects = '';
-            mainLibrary.subjects.forEach((subject) => {
+            mainLibrary.getSubjects().forEach((subject) => {
                 dropDownSubjects = dropDownSubjects + `<option value='${subject.id}'>${subject.name}</option>`;
             })
             document.querySelector('#subjectToChoose').innerHTML = dropDownSubjects;
@@ -147,10 +146,7 @@
                 author: bookAuthor,
                 status: 'available'
             }
-            mainLibrary.books.push(selectedBook);
-            console.log(mainLibrary.books);
-            console.log(selectedBook);
-
+            mainLibrary.getBooks().push(selectedBook);
             renderDropDownSubjects();
         }
 

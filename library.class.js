@@ -55,7 +55,7 @@ class Library {
             author: 'Chiara Marletto',
             status: 'available'
         }
-    ]
+    ];
 
     addSubject(subject) {
         const subjectName = {
@@ -64,5 +64,13 @@ class Library {
         }
 
         this.subjects.push(subjectName);
+    }
+
+    getSubjects() {
+        return this.subjects;
+    }
+
+    getBooks() {
+        return this.books;
     }
 }
