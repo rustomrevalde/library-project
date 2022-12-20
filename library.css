@@ -1,0 +1,41 @@
+section {
+    background-color: aquamarine;
+    height: 970px;
+}
+
+.header {
+    padding: 30px 50px 30px 50px;
+}
+
+ul li {
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: black;
+}
+
+button {
+    margin-left: 10px;
+    border-color: blue;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#new-subjects > button:focus {
+    background-color: blue;
+    color: #ffffff;
+}
+
+input {
+    padding: 5px;
+    border-radius: 5px;
+    border-color: #000000;
+}
+
+select {
+    padding: 7px 20px 7px 20px;
+    border-radius: 5px;
+}
