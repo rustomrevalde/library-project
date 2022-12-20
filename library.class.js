@@ -66,6 +66,17 @@ class Library {
         this.subjects.push(subjectName);
     }
 
+    addBook(subjectId, name, author) {
+        const selectedBook = {
+            subject_id: +subjectId,
+            name: name,
+            author: author,
+            status: 'available'
+        }
+
+        this.books.push(selectedBook);
+    }
+
     getSubjects() {
         return this.subjects;
     }

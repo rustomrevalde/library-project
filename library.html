@@ -139,14 +139,7 @@
             const subjectId = document.getElementById('subjectToChoose').value;
             const bookName = document.getElementById('bookName').value;
             const bookAuthor = document.getElementById('authorName').value;
-
-            const selectedBook = {
-                subject_id: +subjectId,
-                name: bookName,
-                author: bookAuthor,
-                status: 'available'
-            }
-            mainLibrary.getBooks().push(selectedBook);
+            mainLibrary.addBook(subjectId, bookName, bookAuthor);
             renderDropDownSubjects();
         }
 
